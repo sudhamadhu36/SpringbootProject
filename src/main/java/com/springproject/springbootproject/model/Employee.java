@@ -1,5 +1,6 @@
 package com.springproject.springbootproject.model;
 
+
 import java.sql.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -9,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+//import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -38,18 +40,22 @@ public class Employee {
 	@Column(name="department")
 	private String department;
 	
-	
-	public Employee() {
-		
-	}
-	
+	/*@Lob
+	private byte[] photo;*/
+	/*byte[] photo*/
 	public Employee(String empName, String sex, Date dob, long salary, String department) {
 		this.empName = empName;
 		this.sex = sex;
 		this.dob = dob;
 		this.salary = salary;
 		this.department = department;
+		//this.photo = photo;
 	}
+
+	public Employee() {
+		
+	}
+	
 	
 	public long getId() {
 		return id;
@@ -91,4 +97,12 @@ public class Employee {
 		this.department = department;
 	}
 
+	/*public byte[] getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
+	}*/
+	
 }
